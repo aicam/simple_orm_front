@@ -37,6 +37,20 @@
                 </v-btn>
             </v-card-text>
         </v-card>
+        <v-card
+                style="margin-top: 10px;"
+            v-for="item in payments"
+            :key="item.ID">
+            <v-card-text>
+                <v-row class="justify-space-between black--text">
+                    <p>{{item.customer_name}}</p>
+                    <p>{{item.amount}}</p>
+                    <p>{{item.method}}</p>
+                    <p>{{item.comment}}</p>
+                    <p>{{item.time_added}}</p>
+                </v-row>
+            </v-card-text>
+        </v-card>
         <v-snackbar
                 v-model="snackbar"
         >
@@ -70,7 +84,8 @@
             dt: false,
             customers: [],
             snackbar: false,
-            snackbarText: ""
+            snackbarText: "",
+            payments: []
         }),
         methods: {
             addPayment: function () {
@@ -97,11 +112,14 @@
                 })
             },
             getPayments: function () {
-
+                axios.get(P_URL + 'get_all_payments').then(response => {
+                    this.payments = response.data
+                })
             }
         },
         mounted: function () {
             this.getCustomers()
+            this.getPayments()
         }
     }
 </script>
