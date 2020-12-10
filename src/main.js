@@ -6,6 +6,7 @@ import HelloWorld from "@/components/HelloWorld";
 import Products from './components/Products'
 import customers from './components/Customers'
 import payment from  './components/Payment'
+import orders from './components/Orders'
 import axios from 'axios'
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -18,7 +19,8 @@ const router = new VueRouter({
     {name: 'login',path: '/login', component: HelloWorld },
     {name: 'products', path: '/products', component: Products},
     {name: 'customers', path: '/customers', component: customers},
-    {name: 'payment', path: '/payment', component: payment}
+    {name: 'payment', path: '/payment', component: payment},
+    {name: 'orders', path: '/orders', component: orders}
   ]
 });
 router.beforeEach((to, from, next) => {

@@ -32,7 +32,6 @@
       >
         <h2>Menu</h2>
         <v-list-item-group
-                v-model="group"
                 active-class="deep-purple--text text--accent-4"
         >
           <v-list-item link @click="$router.push({ name: 'login' })">
@@ -50,6 +49,10 @@
 
           <v-list-item link @click="$router.push({ name: 'payment' })">
             <v-list-item-title>Payment Master</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item link @click="$router.push({ name: 'orders' })">
+            <v-list-item-title>Order Master</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
