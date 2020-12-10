@@ -44,12 +44,12 @@
             <v-list-item-title>Product Master</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
+          <v-list-item link @click="$router.push({ name: 'customers' })">
+            <v-list-item-title>Customer Master</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title>Buzz</v-list-item-title>
+          <v-list-item link @click="$router.push({ name: 'payment' })">
+            <v-list-item-title>Payment Master</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
